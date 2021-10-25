@@ -6,7 +6,7 @@
 /*   By: aregenia <aregenia@student.21-school.      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 01:42:47 by aregenia          #+#    #+#             */
-/*   Updated: 2021/10/24 02:12:16 by aregenia         ###   ########.fr       */
+/*   Updated: 2021/10/25 12:22:09 by aregenia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,22 +50,22 @@ char	*to_hexX(int n)
 	}
 	ret = ft_strrev(tmp);
 	free(tmp);
-	return (ret;
+	return (ret);
 }
 
 int	print_xX(int c, va_list argv)
 {
 	int	size;
 	int	i;
-	int	*tmp;
+	char	*tmp;
 
 	i = -1;
 	tmp = to_hexX(va_arg(argv, int));
 	if (c == 'X')
-		while (temp[++i])
+		while (tmp[++i])
 			tmp[i] = ft_toupper(tmp[i]);
 	ft_putstr_fd(tmp, 1);
 	size = ft_strlen(tmp);
 	free(tmp);
-	return (size;
+	return (size);
 }

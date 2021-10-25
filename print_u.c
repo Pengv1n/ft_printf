@@ -6,13 +6,13 @@
 /*   By: aregenia <aregenia@student.21-school.      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 00:55:59 by aregenia          #+#    #+#             */
-/*   Updated: 2021/10/24 02:18:02 by aregenia         ###   ########.fr       */
+/*   Updated: 2021/10/25 12:21:32 by aregenia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int     size_uns(unsigned_int uns_n)
+int     size_uns(unsigned int uns_n)
 {
         int     i;
 
@@ -34,7 +34,7 @@ char    *ft_utoa(int n)
         char    *ret;
 
         uns_n = (unsigned int)n;
-        i = size_uns(usn_n);
+        i = size_uns(uns_n);
         ret = (char *)malloc(sizeof(char) * (i + 1));
         if (!ret)
                 return (NULL);
@@ -47,7 +47,7 @@ char    *ft_utoa(int n)
                 uns_n = uns_n / 10;
                 i--;
         }
-        return (ret)
+        return (ret);
 }
 
 int	print_u(va_list argv)

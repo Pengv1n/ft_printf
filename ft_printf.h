@@ -6,7 +6,7 @@
 /*   By: aregenia <aregenia@student.21-school.      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/23 17:39:45 by aregenia          #+#    #+#             */
-/*   Updated: 2021/10/24 02:36:57 by aregenia         ###   ########.fr       */
+/*   Updated: 2021/10/25 12:18:15 by aregenia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include "stdarg.h"
 # include "stdlib.h"
+# include "../libft/libft.h"
 
 int	format_conv(int c, va_list argv);
 int	ft_printf(const char *str, ...);

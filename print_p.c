@@ -6,7 +6,7 @@
 /*   By: aregenia <aregenia@student.21-school.      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/23 21:24:11 by aregenia          #+#    #+#             */
-/*   Updated: 2021/10/24 02:16:48 by aregenia         ###   ########.fr       */
+/*   Updated: 2021/10/25 12:20:56 by aregenia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,11 +39,11 @@ char    *to_hex(size_t add)
         tmp = (char *)malloc(sizeof(char) * (size_hex(add) + 1));
         if (!tmp)
                 return (NULL);
-        if (n == 0)
+        if (add == 0)
                 tmp[0] = '0';
         while (add)
         {
-                tmp[i] = hex[add % 16];
+                tmp[i] = hex_data[add % 16];
                 i++;
                 add = add / 16;
         }
