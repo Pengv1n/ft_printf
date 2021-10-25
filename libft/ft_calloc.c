@@ -1,30 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aregenia <aregenia@student.21-school.      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/23 17:39:45 by aregenia          #+#    #+#             */
-/*   Updated: 2021/10/25 14:33:04 by aregenia         ###   ########.fr       */
+/*   Created: 2021/10/10 01:30:43 by aregenia          #+#    #+#             */
+/*   Updated: 2021/10/10 01:30:46 by aregenia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "libft.h"
 
-# include "stdarg.h"
-# include "stdlib.h"
-# include "libft/libft.h"
+void	*ft_calloc(size_t count, size_t size)
+{
+	char	*s;
 
-int	format_conv(int c, va_list argv);
-int	ft_printf(const char *str, ...);
-
-int	print_cs(int c, va_list argv);
-int	print_di(va_list argv);
-int	print_p(va_list argv);
-int	print_u(va_list argv);
-int	print_xX(int c, va_list argv);
-char	*ft_strrev(char *s);
-
-#endif
+	s = malloc(count * size);
+	if (!s)
+		return (NULL);
+	ft_bzero(s, count * size);
+	return (s);
+}

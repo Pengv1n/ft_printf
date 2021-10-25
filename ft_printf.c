@@ -6,7 +6,7 @@
 /*   By: aregenia <aregenia@student.21-school.      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/23 17:20:36 by aregenia          #+#    #+#             */
-/*   Updated: 2021/10/25 12:19:16 by aregenia         ###   ########.fr       */
+/*   Updated: 2021/10/25 21:24:22 by aregenia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@ int	ft_printf(const char *str, ...)
 	int	i;
 	int	size;
 
+	if (!str)
+		return (-1);
 	i = 0;
 	size = 0;
 	va_start(argv, str);
-	if (!str)
-		return (-1);
-	while (str[size])
+	while (str[i])
 	{
 		if (str[i] == '%' && ft_strchr("cspdiuxX%", str[i + 1]))
 		{

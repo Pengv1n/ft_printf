@@ -25,5 +25,6 @@ char	*ft_strrev(char *s)
 		return (NULL);
 	while (len)
 		ret[i++] = s[--len];
+	ret[i] = '\0';
 	return (ret);
 }

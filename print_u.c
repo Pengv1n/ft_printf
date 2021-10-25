@@ -39,7 +39,10 @@ char    *ft_utoa(int n)
         if (!ret)
                 return (NULL);
         if (uns_n == 0)
-                ret[0] = '0';
+		{
+	        ret[0] = '0';
+        }
+		ret[i] = '\0';
         i--;
         while (uns_n)
         {

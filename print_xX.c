@@ -48,6 +48,7 @@ char	*to_hexX(int n)
 		tmp[i++] = hex_data[uns_n % 16];
 		uns_n = uns_n / 16;
 	}
+	tmp[i] = '\0';
 	ret = ft_strrev(tmp);
 	free(tmp);
 	return (ret);
