@@ -59,6 +59,11 @@ int	print_p(va_list argv)
 	char	*temp;
 
 	temp_i = va_arg(argv, size_t);
+	if (temp_i == 0)
+	{
+		ft_putstr_fd("(nil)", 1);
+		return (5);
+	}
 	temp = to_hex(temp_i);
 	ft_putstr_fd("0x", 1);
 	ft_putstr_fd(temp, 1);

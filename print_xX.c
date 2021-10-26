@@ -58,10 +58,17 @@ int	print_xX(int c, va_list argv)
 {
 	int	size;
 	int	i;
+	int arg;
 	char	*tmp;
 
 	i = -1;
-	tmp = to_hexX(va_arg(argv, int));
+	arg = va_arg(argv, int);
+	if (!arg)
+	{
+		ft_putchar_fd('0', 1);
+		return (1);
+	}
+	tmp = to_hexX(arg);
 	if (c == 'X')
 		while (tmp[++i])
 			tmp[i] = ft_toupper(tmp[i]);
