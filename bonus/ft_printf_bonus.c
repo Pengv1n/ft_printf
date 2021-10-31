@@ -6,11 +6,31 @@
 /*   By: aregenia <aregenia@student.21-school.      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/27 13:04:52 by aregenia          #+#    #+#             */
-/*   Updated: 2021/10/30 16:36:49 by aregenia         ###   ########.fr       */
+/*   Updated: 2021/10/31 23:42:57 by aregenia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf_bonus.h"
+
+int	format_conv(int c, va_list argv)
+{
+	if (c == 'c' || c == 's')
+		return (print_cs(c, argv));
+	if (c == 'p')
+		return (print_p(argv));
+	if (c == 'd' || c == 'i')
+		return (print_di(argv));
+	if (c == 'u')
+		return (print_u(argv));
+	if (c == 'x' || c == 'X')
+		return (print_x_upx(c, argv));
+	if (c == '%')
+	{
+		ft_putchar_fd('%', 1);
+		return (1);
+	}
+	return (0);
+}
 
 int	format_choice(const char **str, int *size, va_list argv, int i)
 {
@@ -19,7 +39,7 @@ int	format_choice(const char **str, int *size, va_list argv, int i)
 	k = i;
 	if (ft_strchr("# +", (*str)[i + 1]))
 	{
-		while (!ft_strchr("dixX", (*str)[++k]))
+		while (!ft_strchr("cspdiuxX", (*str)[++k]))
 			;
 		*size += format_conv_bonus((*str)[i + 1], (*str)[k], argv);
 		i = (k - 1);
@@ -33,8 +53,8 @@ int	format_choice(const char **str, int *size, va_list argv, int i)
 int	ft_printf(const char *str, ...)
 {
 	va_list	argv;
-	int	i;
-	int	size;
+	int		i;
+	int		size;
 
 	if (!str)
 		return (-1);
@@ -47,7 +67,7 @@ int	ft_printf(const char *str, ...)
 			i = format_choice(&str, &size, argv, i);
 		else
 		{
-			ft_putchar_fd(str[i],1);
+			ft_putchar_fd(str[i], 1);
 			size++;
 		}
 		i++;

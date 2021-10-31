@@ -28,7 +28,6 @@ SRC_LIBFT_NP = ft_putchar_fd.c \
 
 SRC_BONUS_NP =	format_conv_bonus.c \
 		ft_printf_bonus.c \
-		ft_printf_bonus.h \
 		ft_strrev_bonus.c \
 		print_cs_bonus.c \
 		print_di_bonus.c \

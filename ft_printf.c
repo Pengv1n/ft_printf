@@ -6,7 +6,7 @@
 /*   By: aregenia <aregenia@student.21-school.      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/23 17:20:36 by aregenia          #+#    #+#             */
-/*   Updated: 2021/10/25 21:24:22 by aregenia         ###   ########.fr       */
+/*   Updated: 2021/10/31 23:21:05 by aregenia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 int	ft_printf(const char *str, ...)
 {
 	va_list	argv;
-	int	i;
-	int	size;
+	int		i;
+	int		size;
 
 	if (!str)
 		return (-1);
@@ -32,7 +32,7 @@ int	ft_printf(const char *str, ...)
 		}
 		else
 		{
-			ft_putchar_fd(str[i],1);
+			ft_putchar_fd(str[i], 1);
 			size++;
 		}
 		i++;

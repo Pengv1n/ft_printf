@@ -6,7 +6,7 @@
 /*   By: aregenia <aregenia@student.21-school.      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/23 20:10:44 by aregenia          #+#    #+#             */
-/*   Updated: 2021/10/23 21:23:10 by aregenia         ###   ########.fr       */
+/*   Updated: 2021/10/31 23:19:22 by aregenia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	print_cs(int c, va_list argv)
 		arg = va_arg(argv, char *);
 		if (!arg)
 		{
-			ft_putstr_fd("(null)",1);
+			ft_putstr_fd("(null)", 1);
 			return (6);
 		}
 		else

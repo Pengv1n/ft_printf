@@ -6,7 +6,7 @@
 /*   By: aregenia <aregenia@student.21-school.      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/23 19:35:04 by aregenia          #+#    #+#             */
-/*   Updated: 2021/10/25 12:20:17 by aregenia         ###   ########.fr       */
+/*   Updated: 2021/10/31 23:39:03 by aregenia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,10 @@ int	format_conv(int c, va_list argv)
 	if (c == 'u')
 		return (print_u(argv));
 	if (c == 'x' || c == 'X')
-		return (print_xX(c, argv));
+		return (print_x_upx(c, argv));
 	if (c == '%')
 	{
-		ft_putchar_fd('%',1);
+		ft_putchar_fd('%', 1);
 		return (1);
 	}
 	return (0);

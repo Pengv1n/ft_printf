@@ -6,13 +6,13 @@
 /*   By: aregenia <aregenia@student.21-school.      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/31 12:36:14 by aregenia          #+#    #+#             */
-/*   Updated: 2021/10/31 12:36:17 by aregenia         ###   ########.fr       */
+/*   Updated: 2021/10/31 23:32:10 by aregenia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "ft_printf_bonus.h"
 
-int	size_hexX(unsigned int n)
+int	size_hex_upx(unsigned int n)
 {
 	int	i;
 
@@ -27,18 +27,18 @@ int	size_hexX(unsigned int n)
 	return (i);
 }
 
-char	*to_hexX(int n)
+char	*to_hex_upx(int n)
 {
 	unsigned int	uns_n;
-	int	i;
-	char	*tmp;
-	char	*hex_data;
-	char	*ret;
+	int				i;
+	char			*tmp;
+	char			*hex_data;
+	char			*ret;
 
 	hex_data = "0123456789abcdef";
 	i = 0;
 	uns_n = (unsigned int)n;
-	tmp = (char *)malloc(sizeof(char) * (size_hexX(uns_n) + 1));
+	tmp = (char *)malloc(sizeof(char) * (size_hex_upx(uns_n) + 1));
 	if (!tmp)
 		return (NULL);
 	if (uns_n == 0)
@@ -54,11 +54,11 @@ char	*to_hexX(int n)
 	return (ret);
 }
 
-int	print_xX(int c, va_list argv)
+int	print_x_upx(int c, va_list argv)
 {
-	int	size;
-	int	i;
-	int arg;
+	int		size;
+	int		i;
+	int		arg;
 	char	*tmp;
 
 	i = -1;
@@ -68,7 +68,7 @@ int	print_xX(int c, va_list argv)
 		ft_putchar_fd('0', 1);
 		return (1);
 	}
-	tmp = to_hexX(arg);
+	tmp = to_hex_upx(arg);
 	if (c == 'X')
 		while (tmp[++i])
 			tmp[i] = ft_toupper(tmp[i]);

@@ -6,15 +6,15 @@
 /*   By: aregenia <aregenia@student.21-school.      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/31 12:35:34 by aregenia          #+#    #+#             */
-/*   Updated: 2021/10/31 12:35:39 by aregenia         ###   ########.fr       */
+/*   Updated: 2021/10/31 23:28:46 by aregenia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "ft_printf_bonus.h"
 
 int	print_di(va_list argv)
 {
-	int	size;
+	int		size;
 	char	*tmp;
 
 	tmp = ft_itoa(va_arg(argv, int));

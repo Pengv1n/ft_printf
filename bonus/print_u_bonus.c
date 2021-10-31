@@ -6,56 +6,56 @@
 /*   By: aregenia <aregenia@student.21-school.      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/31 12:36:03 by aregenia          #+#    #+#             */
-/*   Updated: 2021/10/31 12:36:06 by aregenia         ###   ########.fr       */
+/*   Updated: 2021/10/31 23:35:02 by aregenia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "ft_printf_bonus.h"
 
-int     size_uns(unsigned int uns_n)
+int	size_uns(unsigned int uns_n)
 {
-        int     i;
+	int	i;
 
-        i = 0;
-        if (uns_n == 0)
-                i = 1;
-        while (uns_n)
-        {
-                uns_n = uns_n / 10;
-                i++;
-        }
-        return (i);
+	i = 0;
+	if (uns_n == 0)
+		i = 1;
+	while (uns_n)
+	{
+		uns_n = uns_n / 10;
+		i++;
+	}
+	return (i);
 }
 
-char    *ft_utoa(int n)
+char	*ft_utoa(int n)
 {
-        int     i;
-        unsigned int    uns_n;
-        char    *ret;
+	int				i;
+	unsigned int	uns_n;
+	char			*ret;
 
-        uns_n = (unsigned int)n;
-        i = size_uns(uns_n);
-        ret = (char *)malloc(sizeof(char) * (i + 1));
-        if (!ret)
-                return (NULL);
-        if (uns_n == 0)
-		{
-	        ret[0] = '0';
-        }
-		ret[i] = '\0';
-        i--;
-        while (uns_n)
-        {
-                ret[i] = uns_n % 10 + '0';
-                uns_n = uns_n / 10;
-                i--;
-        }
-        return (ret);
+	uns_n = (unsigned int)n;
+	i = size_uns(uns_n);
+	ret = (char *)malloc(sizeof(char) * (i + 1));
+	if (!ret)
+		return (NULL);
+	if (uns_n == 0)
+	{
+		ret[0] = '0';
+	}
+	ret[i] = '\0';
+	i--;
+	while (uns_n)
+	{
+		ret[i] = uns_n % 10 + '0';
+		uns_n = uns_n / 10;
+		i--;
+	}
+	return (ret);
 }
 
 int	print_u(va_list argv)
 {
-	int	size;
+	int		size;
 	char	*tmp;
 
 	tmp = ft_utoa(va_arg(argv, int));

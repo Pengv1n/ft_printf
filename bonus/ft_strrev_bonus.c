@@ -6,16 +6,16 @@
 /*   By: aregenia <aregenia@student.21-school.      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/31 12:34:56 by aregenia          #+#    #+#             */
-/*   Updated: 2021/10/31 12:35:00 by aregenia         ###   ########.fr       */
+/*   Updated: 2021/10/31 23:35:23 by aregenia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "ft_printf_bonus.h"
 
 char	*ft_strrev(char *s)
 {
-	int	i;
-	int	len;
+	int		i;
+	int		len;
 	char	*ret;
 
 	i = 0;

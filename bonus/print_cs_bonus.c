@@ -6,11 +6,11 @@
 /*   By: aregenia <aregenia@student.21-school.      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/31 12:35:23 by aregenia          #+#    #+#             */
-/*   Updated: 2021/10/31 12:35:25 by aregenia         ###   ########.fr       */
+/*   Updated: 2021/10/31 23:36:34 by aregenia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "ft_printf_bonus.h"
 
 int	print_cs(int c, va_list argv)
 {
@@ -26,7 +26,7 @@ int	print_cs(int c, va_list argv)
 		arg = va_arg(argv, char *);
 		if (!arg)
 		{
-			ft_putstr_fd("(null)",1);
+			ft_putstr_fd("(null)", 1);
 			return (6);
 		}
 		else
